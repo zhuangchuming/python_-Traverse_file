@@ -12,7 +12,7 @@ python的基本语法不阐述，网上有很多的教程，但是需要注意�
 
 1、首先能够读取到路径下的文件列表
 
-![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/2.jpg)
+![Image text](https://github.com/zhuangchuming/repositpry/raw/master/python_-Traverse_file/imgs/2.jpg)
 
 2、遍历所有文件目录，判断是否是文件夹，是的话继续遍历文件夹
 
