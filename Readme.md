@@ -4,41 +4,53 @@ python的基本语法不阐述，网上有很多的教程，但是需要注意�
 
 退格相关报错如下图:
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/1.jpg)
+
 全文退格使用的是tab，在这个位置我用空格符退一个的空格会报错。
 
 步骤流程：
 一、获取文件相关的信息，并解析
+
 1、首先能够读取到路径下的文件列表
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/2.jpg)
 
 2、遍历所有文件目录，判断是否是文件夹，是的话继续遍历文件夹
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/3.jpg)
 
 3、非文件夹的文件，对文件名字进行过滤，过滤在config.py的keyword，设置为自己的需要过滤的内容即可。
 
 4、读取文件内容
-![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/4.jpg)
+
+![Image text](https://raw.github.com/zhuangchuming/python_-Traverse_file/imgs/4.jpg)
 
 5、将文件的内容解析成能够插入数据库的列表，每一组数据都保存到totalList，
+
 all_the_text是文件的所有内容，config.GaomuTrue==1是我定制的解析数据格式，如果有其他要求，可以自己在else部分添加，并且把config.py的GaomuTrue的值给改为0。解析结果得到totalList,
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/5.jpg)
 
 二、连接上mysql数据库，并创建表插入数据
+
 1、安装python-mysql
+
 mac推荐链接：
 http://blog.csdn.net/xiaodanpeng/article/details/46120359
+
 windows跟linux的就要自己去找啦，嘿嘿。
 
 2、连接mysql数据库，并选择使用的数据库名称，该名称的配置在config文件的databaseName.
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/6.jpg)
 
 3、插入数据
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/7.jpg)
 
-sql_string为mysql的语句，cur.executemany()这个方法是同时插入多个语句，这是mysql中最高效的插入方式。
-最后conn.commit()执行后，数据才会出现在数据库中。
+sql_string为mysql的语句，cur.executemany()这个方法是同时插入多个语句，这是mysql中最高效的插入方式。最后conn.commit()执行后，数据才会出现在数据库中。
 
 Forexample：下图是本机的一个终端运行输出的例子。
 遍历文件夹0000下面的所有文件
+
 ![Image text](https://raw.github.com/zhuangchuming/repositpry/master/python_-Traverse_file/imgs/8.jpg)
 
